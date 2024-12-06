@@ -112,7 +112,8 @@ function Install-Binary {
     $installStartTime = Get-Date
     Write-Host "Starting Install $Name..."
     try {
-        $process = Start-Process -FilePath $filePath -ArgumentList $InstallArgs -Wait -PassThru
+        Write-Host "Running $filePath with arguments: $InstallArgs"
+        $process = Start-Process -FilePath $filePath -ArgumentList $InstallArgs -Wait -PassThru -Verbose
         $exitCode = $process.ExitCode
         $installCompleteTime = [math]::Round(($(Get-Date) - $installStartTime).TotalSeconds, 2)
         if ($exitCode -eq 0) {
