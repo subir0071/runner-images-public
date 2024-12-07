@@ -74,7 +74,7 @@ variable "imagedata_file" {
 
 variable "temp_dir" {
   type    = string
-  default = "D:\\temp"
+  default = "C:\\temp"
 }
 
 variable "install_password" {
@@ -275,9 +275,6 @@ build {
     inline = ["Set-Service -Name wlansvc -StartupType Manual", "if ($(Get-Service -Name wlansvc).Status -eq 'Running') { Stop-Service -Name wlansvc}"]
   }
 
-  provisioner "powershell" {
-    inline = ["[System.Console]::ReadKey($true)"]
-  }
 
   provisioner "powershell" {
     environment_vars = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
