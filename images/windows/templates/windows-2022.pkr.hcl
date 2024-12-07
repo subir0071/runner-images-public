@@ -276,10 +276,13 @@ build {
   }
 
   provisioner "powershell" {
+    inline = ["[System.Console]::ReadKey($true)"]
+  }
+
+  provisioner "powershell" {
     environment_vars = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
     scripts          = [
-      Write-Host "Pausing for debugging. Press any key to continue..."
-      [System.Console]::ReadKey($true)
+      "${path.root}/../scripts/build/Install-Chrome.ps1",
       "${path.root}/../scripts/build/Install-Docker.ps1",
       "${path.root}/../scripts/build/Install-DockerWinCred.ps1",
       "${path.root}/../scripts/build/Install-DockerCompose.ps1",
@@ -299,7 +302,6 @@ build {
     elevated_user     = "${var.install_user}"
     environment_vars  = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
     scripts           = [
-      "${path.root}/../scripts/build/Install-Chrome.ps1",
       "${path.root}/../scripts/build/Install-VisualStudio.ps1",
       "${path.root}/../scripts/build/Install-KubernetesTools.ps1"
     ]
