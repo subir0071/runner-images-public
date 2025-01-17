@@ -150,6 +150,8 @@ get_checksum_from_github_release() {
     fi
 
     matching_releases=$(get_github_releases_by_version "${repo}" "${version}" "${allow_pre_release}" "true")
+    echo "Repo: ${repo} Version: ${version} Allow pre-release: ${allow_pre_release}"
+    echo "Matching releases: ${matching_releases}"
     matched_line=$(printf "$(echo $matching_releases | jq '.body')\n" | grep "$file_name")
 
     if [[ -z "$matched_line" ]]; then
