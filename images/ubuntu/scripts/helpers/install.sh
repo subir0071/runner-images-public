@@ -109,7 +109,7 @@ resolve_github_release_asset_url() {
     local allow_pre_release=${4:-false}
     local allow_multiple_matches=${5:-false}
 
-    echo "Checking for release asset matching version ${version} and URL filter ${url_filter} in ${repo}..."
+   # echo "Checking for release asset matching version ${version} and URL filter ${url_filter} in ${repo}..."
 
     matching_releases=$(get_github_releases_by_version "${repo}" "${version}" "${allow_pre_release}" "true")
     matched_url=$(echo $matching_releases | jq -r ".assets[].browser_download_url | select(${url_filter})")
