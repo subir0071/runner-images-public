@@ -179,6 +179,7 @@
         "subversion" : "17",
         "edition" : "Enterprise",
         "channel": "release",
+        "installChannel": "148093173_-450296497",
         "signature": "8F985BE8FD256085C90A95D3C74580511A1DB975",
         "workloads": [
             "Component.Dotfuscator",
