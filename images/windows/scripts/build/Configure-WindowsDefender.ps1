@@ -40,5 +40,5 @@ $avPreference | Foreach-Object {
 $atpRegPath = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection'
 if (Test-Path $atpRegPath) {
     Write-Host "Set Microsoft Defender Antivirus to passive mode"
-    Set-ItemProperty -Path $atpRegPath -Name 'ForceDefenderPassiveMode' -Value '1' -Type 'DWORD'
+    Set-ItemProperty -Path $atpRegPath -Name 'ForceDefenderPassiveMode' -Value '0' -Type 'DWORD'
 }
