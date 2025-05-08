@@ -142,7 +142,7 @@ source "azure-arm" "build_image" {
   client_secret                          = "${var.client_secret}"
   image_offer                            = "ubuntu-24_04-lts"
   image_publisher                        = "canonical"
-  image_sku                              = "server-gen1"
+  image_sku                              = "server"
   location                               = "${var.location}"
   managed_image_name                     = "${local.managed_image_name}"
   managed_image_resource_group_name      = "${var.managed_image_resource_group_name}"
