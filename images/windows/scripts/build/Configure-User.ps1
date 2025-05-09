@@ -15,6 +15,12 @@ if ($LASTEXITCODE -ne 0) {
     throw "Failed to warmup 'devenv.exe /updateconfiguration'"
 }
 
+Write-Host "Warmup 'devenv.exe /RootSuffix Exp /ResetSettings General.vssettings /Command File.Exit'"
+cmd.exe /c "`"$vsInstallRoot\Common7\IDE\devenv.exe`" /RootSuffix Exp /ResetSettings General.vssettings /Command File.Exit"
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to warmup 'devenv.exe /RootSuffix Exp /ResetSettings General.vssettings /Command File.Exit'"
+}
+
 # we are fine if some file is locked and cannot be copied
 Copy-Item ${env:USERPROFILE}\AppData\Local\Microsoft\VisualStudio -Destination c:\users\default\AppData\Local\Microsoft\VisualStudio -Recurse -ErrorAction SilentlyContinue
 
