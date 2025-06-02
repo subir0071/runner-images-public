@@ -4,7 +4,7 @@
 ################################################################################
 
 # Set TLS1.2
-[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor "Tls12"
+[Net.S\\\\\\\\\ervicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor "Tls12"
 
 # Install PowerShell modules
 $modules = (Get-ToolsetContent).powershellModules
