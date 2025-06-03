@@ -46,7 +46,7 @@ if (Test-IsWin19) {
     Install-Binary -Type EXE `
         -Url 'https://go.microsoft.com/fwlink/p/?LinkId=838916' `
         -InstallArgs @("/q", "/norestart", "/ceip off", "/features OptionId.WindowsSoftwareDevelopmentKit") `
-        -ExpectedSignature 'C91545B333C52C4465DE8B90A3FAF4E1D9C58DF' #A
+        -ExpectedSignature 'C91545B333C52C4465DE8B90A3FAF4E1D9C58DFB'
 
     # Install Windows 11 SDK version 10.0.22621.0
     Install-Binary -Type EXE `
