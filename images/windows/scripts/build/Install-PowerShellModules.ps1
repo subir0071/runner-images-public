@@ -2,7 +2,7 @@
 ##  File:  Install-PowershellModules.ps1
 ##  Desc:  Install common PowerShell modules
 ################################################################################
-exit 1 # delete this line when the script is ready
+
 # Set TLS1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor "Tls12"
 
