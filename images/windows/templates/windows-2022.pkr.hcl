@@ -343,6 +343,7 @@ build {
   provisioner "powershell" {
     environment_vars = ["IMAGE_FOLDER=${var.image_folder}", "TEMP_DIR=${var.temp_dir}"]
     scripts          = [
+      "${path.root}/../scripts/build/Install-Miniconda.ps1",
       "${path.root}/../scripts/build/Install-Docker.ps1",
       "${path.root}/../scripts/build/Install-DockerWinCred.ps1",
       "${path.root}/../scripts/build/Install-DockerCompose.ps1",
@@ -439,7 +440,6 @@ build {
       "${path.root}/../scripts/build/Install-Mingw64.ps1",
       "${path.root}/../scripts/build/Install-Haskell.ps1",
       "${path.root}/../scripts/build/Install-Stack.ps1",
-      "${path.root}/../scripts/build/Install-Miniconda.ps1",
       "${path.root}/../scripts/build/Install-AzureCosmosDbEmulator.ps1",
       "${path.root}/../scripts/build/Install-Mercurial.ps1",
       "${path.root}/../scripts/build/Install-Zstd.ps1",
