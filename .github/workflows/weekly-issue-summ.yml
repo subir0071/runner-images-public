@@ -41,6 +41,6 @@ jobs:
 
           # Create the summary issue
           ISSUE_TITLE="Issue Summary - $(date -d '7 days ago' '+%B %d') to $(date '+%B %d')"
-          gh issue create --title "$ISSUE_TITLE" --label summary --body-file summary.md
+          gh issue create --title "$ISSUE_TITLE" --body-file summary.md
         env:
           GH_TOKEN: ${{ github.token }}
